@@ -1,0 +1,21 @@
+name: Dotproduct
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup
+        run: make setup
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
+      - name: run
+        run: make run

@@ -1,0 +1,5 @@
+# Testing
+pytest==7.4.0
+
+# Linting
+flake8==6.1.0
