@@ -1,4 +1,4 @@
-name: Dotproduct
+name: format
 on:
   push:
     branches: ["main"]
@@ -15,3 +15,5 @@ jobs:
         run: make install
       - name: format
         run: make format
+      - name: run
+        run: make run

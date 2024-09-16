@@ -1,4 +1,4 @@
-name: Dotproduct
+name: lint
 on:
   push:
     branches: ["main"]
@@ -15,3 +15,5 @@ jobs:
         run: make install
       - name: lint
         run: make lint
+      - name: run
+        run: make run
