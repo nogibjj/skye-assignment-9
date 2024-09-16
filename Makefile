@@ -22,4 +22,4 @@ run:
 	echo "![graph](./output_graph.png)" >> README.md
 
 
-all: install lint test format run
+all: install lint run test format

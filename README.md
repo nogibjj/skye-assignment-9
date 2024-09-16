@@ -54,4 +54,6 @@ This project analyzes urban air quality and its impact on public health using da
 
 ___
 
-# note : summary and graph are generated through cicd
+# note : summary and graph are generated through cicdTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
+Feels - Mean: 76.34, Median: 76.09, Std Dev: 1.06
+![graph](./output_graph.png)

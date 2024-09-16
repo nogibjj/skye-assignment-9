@@ -43,7 +43,13 @@ def prep_graph(g, g_df):
 
 
 if __name__ == "__main__":
+    #
+    # file_path = ""
+    # try:
+    #     file_path = "src/files"
+    # except ModuleNotFoundError:
     file_path = "src/files"
+
     file_name = "Urban-Air-Quality-and-Health-Impact-Dataset.csv"
     dataframe = DataFrame(load(file_path, file_name))
     group_data = group_data(dataframe.get_df())
