@@ -91,6 +91,7 @@ class Graph:
             f"Mean: {mean}, "
             f"Median: {median}, "
             f"Std Dev: {std_dev}"
+            f"\n"
         )
 
     def plot_and_show_graph(self):

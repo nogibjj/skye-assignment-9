@@ -43,11 +43,7 @@ def prep_graph(g, g_df):
 
 if __name__ == "__main__":
 
-    file_path = ""
-    try:
-        file_path = "src/files"
-    except ModuleNotFoundError:
-        file_path = "src/files"
+    file_path = "src/files"
     file_name = "Urban-Air-Quality-and-Health-Impact-Dataset.csv"
     dataframe = DataFrame(load(file_path, file_name))
     group_data = group_data(dataframe.get_df())
@@ -56,10 +52,10 @@ if __name__ == "__main__":
     # graph.plot_and_save_graph()
 
     # Save the graph as an image
-    graph_image_path = "src/output_graph.png"
+    graph_image_path = "./output_graph.png"
     graph.plot_and_save_graph(save_path=graph_image_path)
 
     # Generate the PDF report with the saved graph
     generate_pdf(
-        "src/output_report.pdf", graph_image_path, title="Temperature and Feels Like Report"
+        "./output_report.pdf", graph_image_path, title="Temperature and Feels Like Report"
     )
