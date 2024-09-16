@@ -1,9 +1,8 @@
-import pytest
 import pandas as pd
 from io import StringIO
 from src.lib import Graph
 
-from src.profile_report import group_data, prep_graph
+from profile_report import group_data, prep_graph
 
 # Sample CSV data for testing
 csv_data = """datetime,temp,feelslike

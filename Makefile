@@ -17,7 +17,7 @@ lint:
 
 run:
 	cat README.md.template > ./README.md
-	venv/bin/python3 ./src/profile_report.py >> ./README.md
+	venv/bin/python3 ./profile_report.py >> ./README.md
 	chmod +x ./output_graph.png
 	echo "![graph](./output_graph.png)" >> README.md
 

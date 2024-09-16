@@ -40,7 +40,7 @@ This project analyzes urban air quality and its impact on public health using da
 # Requirements
 
 - [x] Jupyter notebook that perform descriptive statistics
-- [ ] Jupyter notebook that use nbval plugin for pytest
+- [x] Jupyter notebook that use nbval plugin for pytest
 - [x] Makefile command that run all tests, including, but not limited to, notebook, script, and lib
 - [x] Makefile command that formats code with Python black
 - [x] Makefile command that lint code with Ruff
@@ -49,11 +49,14 @@ This project analyzes urban air quality and its impact on public health using da
 - [x] test_lib.py to test library
 - [x] Generate summary statistics (mean, median, standard deviation)
 - [x] Create at least one data visualization
-- [ ] Gitlab Actions performs all four Makefile commands with badges for each one in the README.md
-- [ ] Generated summary report (PDF or markdown) via CI/CD for extra credit or making your own PDF or MD file and pushing itTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
+- [x] Gitlab Actions performs all four Makefile commands with badges for each one in the README.md
+- [x] Generated summary report (PDF or markdown) via CI/CD for extra credit or making your own PDF or MD file and pushing itTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
 
 ___
 
-# note : summary and graph are generated through cicdTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
+# note : summary and graph are generated through cicd
+
+
+Temp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
 Feels - Mean: 76.34, Median: 76.09, Std Dev: 1.06
 ![graph](./output_graph.png)
