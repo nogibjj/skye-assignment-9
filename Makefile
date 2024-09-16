@@ -3,13 +3,13 @@ install:
 	venv/bin/pip3 install --upgrade pip &&\
 	venv/bin/pip3 install -r requirements.txt
 
-test:
-	venv/bin/python3 -m pytest --nbval src/*.ipynb
-	venv/bin/python3 -m pytest -vv --cov=src.lib
-
 format:	
 	venv/bin/black src/*.py
 	venv/bin/nbqa black src/*.ipynb
+
+test:
+	venv/bin/python3 -m pytest --nbval src/*.ipynb
+	venv/bin/python3 -m pytest -vv --cov=src.lib
 
 lint:
 	venv/bin/nbqa ruff src/*.ipynb
