@@ -1,25 +1,18 @@
-
-image_name:dot_product
-
-setup:
+install:
 	python3 -m venv venv
-	venv/bin/pip install -r requirements.txt
-	
+	venv/bin/pip3 install --upgrade pip &&\
+	venv/bin/pip3 install -r requirements.txt
+
 test:
-	venv/bin/pytest src/test_main.py
+	venv/bin/python3 -m pytest --nbval src/*.ipynb
+	venv/bin/python3 -m pytest -vv --cov=src.lib
+
+format:	
+	venv/bin/black src/*.py
+	venv/bin/nbqa black src/*.ipynb
 
 lint:
-	venv/bin/flake8 src/dotp.py
+	venv/bin/nbqa ruff src/*.ipynb
+	venv/bin/ruff check src/*.py
 
-build:
-	make setup
-	make test
-	make lint
-
-runb:
-	# make build
-	python3 ./src/dotp.py "[1,2,3]" "[5,5,6]"
-
-run:
-	# make build
-	python3 ./src/dotp.py "[1,2,3]" "[5,5,6]"
+all: install lint test format

@@ -1,42 +1,18 @@
-[![Dotproduct](https://github.com/nogibjj/skye-assignment-1/actions/workflows/action.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-1/actions/workflows/action.yml)
-
-# DotProduct Calculation
-
-This project computes the dot product of two vectors using a Python script. The project is integrated with GitHub Actions for continuous integration.
-
-## Usage
-
-To calculate the dot product of two vectors:
-
-```bash
-python3 dotp.py [vector_x] [vector_y]
-```
-
-Example:
-
-
-```bash
-python3 dotp.py [1,2,3] [4,5,6]
-```
-
-Output:
-
-```bash
-dot product result is 32.
-```
-
-## GitHub Actions Workflow
-
-The workflow is triggered on push, pull request, and manual events to the master branch. It performs the following steps:
-
-Setup: `make setup`
-Lint: `make lint`
-Test: `make test`
-Run: `make run`
-
 # Requirements
 
-- [x] python project skeleton.
-- [x] devcontainer with devcontainer.json and Dockerfile
-- [x] Makefile with setup, test, and lint
-- [x] README.md with setup and usage instructions
+- [x] Jupyter notebook that perform descriptive statistics
+- [ ] Jupyter notebook that use nbval plugin for pytest
+- [x] Makefile command that run all tests, including, but not limited to, notebook, script, and lib
+- [x] Makefile command that formats code with Python black
+- [x] Makefile command that lint code with Ruff
+- [x] Makefile command that installs code via:  pip install -r requirements.txt
+- [x] test_script.py to test script
+- [x] test_lib.py to test library
+- [x] Generate summary statistics (mean, median, standard deviation)
+- [x] Create at least one data visualization
+- [ ] Gitlab Actions performs all four Makefile commands with badges for each one in the README.md
+- [ ] Generated summary report (PDF or markdown) via CI/CD for extra credit or making your own PDF or MD file and pushing it 
+
+
+
+
