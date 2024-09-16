@@ -49,6 +49,3 @@ This project analyzes urban air quality and its impact on public health using da
 - [ ] Generated summary report (PDF or markdown) via CI/CD for extra credit or making your own PDF or MD file and pushing itTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
 
 ___
-Temp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
-Feels - Mean: 76.34, Median: 76.09, Std Dev: 1.06
-![graph](./output_graph.png)

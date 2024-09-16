@@ -38,7 +38,7 @@ def test_graph_setters_and_getters():
     graph_class = Graph(df, df["datetime"])
     graph_class.set_dependent_variables([(df["temp"], "Temp", "r")])
     assert graph_class.get_df().equals(df)
-    assert graph_class.get_independent_variables().equals(df["datetime"])
+    assert graph_class.get_independent_variable().equals(df["datetime"])
     assert graph_class.get_dependent_variables() == [(df["temp"], "Temp", "r")]
 
     graph_class.set_title("Temperature Graph")

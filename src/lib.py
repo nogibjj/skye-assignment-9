@@ -1,5 +1,6 @@
-import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def load(file_path, file_name):
@@ -59,7 +60,7 @@ class Graph:
     def get_dependent_variables(self):
         return self.dependent_variables
 
-    def get_independent_variables(self):
+    def get_independent_variable(self):
         return self.independent_variables
 
     def get_title(self):
@@ -73,8 +74,8 @@ class Graph:
 
     def plot_y_axis(self, dependent_variable):
         plt.plot(
-            self.get_independent_variables(),
-            dependent_variable["data"],
+            np.array(self.get_independent_variable()),
+            dependent_variable["data"].to_numpy(),
             label=dependent_variable["label"],
             color=dependent_variable["co"],
             marker="o",
@@ -103,3 +104,16 @@ class Graph:
         plt.legend()
         plt.tight_layout()
         plt.show()
+
+    def plot_and_save_graph(self, save_path):
+        for dependent_variable in self.get_dependent_variables():
+            self.report_statistics(dependent_variable)
+            self.plot_y_axis(dependent_variable)
+        plt.title = self.get_title()
+        plt.xlabel = self.get_x_label()
+        plt.ylabel = self.get_y_label()
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(save_path)
+        plt.close()

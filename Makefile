@@ -15,4 +15,11 @@ lint:
 	venv/bin/nbqa ruff src/*.ipynb
 	venv/bin/ruff check src/*.py
 
-all: install lint test format
+run:
+	cat README.md.template > ./README.md
+	venv/bin/python3 ./src/profile_report.py >> ./README.md
+	chmod +x ./output_graph.png
+	echo "![graph](./output_graph.png)" >> README.md
+
+
+all: install lint test format run
