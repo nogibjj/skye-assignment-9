@@ -1,4 +1,8 @@
 # Urban Air Quality and Health Impact Analysis
+[![test](https://github.com/nogibjj/skye-assignment-2/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-2/actions/workflows/test.yml)
+[![lint](https://github.com/nogibjj/skye-assignment-2/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-2/actions/workflows/lint.yml)
+[![install](https://github.com/nogibjj/skye-assignment-2/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-2/actions/workflows/install.yml)
+[![format](https://github.com/nogibjj/skye-assignment-2/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-2/actions/workflows/format.yml)
 
 ## Overview
 
@@ -49,6 +53,5 @@ This project analyzes urban air quality and its impact on public health using da
 - [ ] Generated summary report (PDF or markdown) via CI/CD for extra credit or making your own PDF or MD file and pushing itTemp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
 
 ___
-Temp - Mean: 76.13, Median: 76.01, Std Dev: 0.96
-Feels - Mean: 76.34, Median: 76.09, Std Dev: 1.06
-![graph](./output_graph.png)
+
+# note : summary and graph are generated through cicd
