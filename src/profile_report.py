@@ -1,5 +1,5 @@
 import pandas as pd
-from lib import load, DataFrame, Graph
+from src.lib import load, DataFrame, Graph
 
 
 def group_data(df):

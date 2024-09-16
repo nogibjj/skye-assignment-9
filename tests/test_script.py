@@ -1,7 +1,8 @@
 import pytest
 import pandas as pd
 from io import StringIO
-from src.lib import load, DataFrame, Graph
+from src.lib import Graph
+
 from src.profile_report import group_data, prep_graph
 
 # Sample CSV data for testing
@@ -26,17 +27,11 @@ def test_group_data():
 
 
 # Test for the prep_graph function
-def test_prep_graph(mocker):
+def test_prep_graph():
     df = pd.read_csv(StringIO(csv_data))
     grouped_df = group_data(df)
-
-    # Create the Graph object
     graph = Graph(grouped_df, grouped_df["datetime"])
-
-    # Prepare the graph for plotting
     prep_graph(graph, grouped_df)
-
-    # Check that the dependent variables, title, and labels were set correctly
     assert len(graph.get_dependent_variables()) == 2
     assert graph.get_title() == "Average Temperature and Feels Like Over Time"
     assert graph.get_x_label() == "Date"
