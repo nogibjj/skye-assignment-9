@@ -1,9 +1,14 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import polars as pl
 
 
-def load(file_path, file_name):
+def load_with_polar(file_path, file_name):
+    return pl.read_csv(file_path + "/" + file_name)
+
+
+def load_with_panda(file_path, file_name):
     return pd.read_csv(file_path + "/" + file_name)
 
 

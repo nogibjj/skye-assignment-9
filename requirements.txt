@@ -11,3 +11,4 @@ nbval==0.10.0
 nbqa==1.7.0
 numpy==1.26.4
 reportlab
+polars

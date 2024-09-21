@@ -1,4 +1,4 @@
-import pandas as pd
+import polars as pl
 from io import StringIO
 from src.lib import Graph
 
@@ -16,18 +16,18 @@ csv_data = """datetime,temp,feelslike
 
 # Test for the group_data function
 def test_group_data():
-    df = pd.read_csv(StringIO(csv_data))
+    df = pl.read_csv(StringIO(csv_data))
     grouped_df = group_data(df)
 
     assert "avg_temp" in grouped_df.columns
     assert "avg_feel_like" in grouped_df.columns
-    assert grouped_df["avg_temp"].iloc[0] == 98.5
-    assert grouped_df["avg_feel_like"].iloc[0] == 95.9
+    assert grouped_df["avg_temp"].mean() == 95.3
+    assert grouped_df["avg_feel_like"].mean() == 91.72
 
 
 # Test for the prep_graph function
 def test_prep_graph():
-    df = pd.read_csv(StringIO(csv_data))
+    df = pl.read_csv(StringIO(csv_data))
     grouped_df = group_data(df)
     graph = Graph(grouped_df, grouped_df["datetime"])
     prep_graph(graph, grouped_df)

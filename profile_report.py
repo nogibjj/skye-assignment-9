@@ -1,17 +1,15 @@
 
-import pandas as pd
+import polars as pl
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from src.lib import load, DataFrame, Graph
+from src.lib import load_with_polar, DataFrame, Graph
+
 
 def group_data(df):
-    df["datetime"] = pd.to_datetime(df["datetime"])
-    df_grouped = (
-        df.groupby(df["datetime"].dt.date)
-        .agg(avg_temp=("temp", "mean"), avg_feel_like=("feelslike", "mean"))
-        .reset_index()
-    )
-    return df_grouped
+    df = df.with_columns(pl.col("datetime").str.to_datetime("%Y-%m-%d"))
+    return df.group_by(df["datetime"]).agg(
+        avg_temp=pl.col("temp").mean(),
+        avg_feel_like=pl.col("feelslike").mean()).sort("datetime")
 
 
 def generate_pdf(output_file, image_path, title="Graph Report"):
@@ -45,17 +43,14 @@ if __name__ == "__main__":
 
     file_path = "src/files"
     file_name = "Urban-Air-Quality-and-Health-Impact-Dataset.csv"
-    dataframe = DataFrame(load(file_path, file_name))
+    dataframe = DataFrame(load_with_polar(file_path, file_name))
     group_data = group_data(dataframe.get_df())
     graph = Graph(group_data, group_data["datetime"])
     prep_graph(graph, group_data)
-    # graph.plot_and_save_graph()
-
-    # Save the graph as an image
     graph_image_path = "./output_graph.png"
     graph.plot_and_save_graph(save_path=graph_image_path)
 
-    # Generate the PDF report with the saved graph
     generate_pdf(
         "./output_report.pdf", graph_image_path, title="Temperature and Feels Like Report"
     )
+
