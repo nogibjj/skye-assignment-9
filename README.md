@@ -1,6 +1,5 @@
 # Assignment 9
 [![action](https://github.com/nogibjj/skye-assignment-9/actions/workflows/action.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-9/actions/workflows/action.yml)
-
 ## Project Overview
 **Assignment 9** is a data analysis project that focuses on processing and summarizing data from a given dataset. The project includes various operations such as calculating value counts, formatting outputs for better readability, and generating reports based on the data.
 
