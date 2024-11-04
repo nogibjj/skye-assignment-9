@@ -19,5 +19,3 @@ jobs:
         run: make test
       - name: lint
         run: make lint
-      - name: run
-        run: make run
