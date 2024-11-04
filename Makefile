@@ -9,17 +9,10 @@ format:
 
 test:
 	venv/bin/python3 -m pytest --nbval src/*.ipynb
-	venv/bin/python3 -m pytest -vv --cov=src.lib
 
 lint:
 	venv/bin/nbqa ruff src/*.ipynb
 	venv/bin/ruff check src/*.py
 
-run:
-	cat README.md.template > ./README.md
-	venv/bin/python3 ./profile_report.py >> ./README.md
-	chmod +x ./output_graph.png
-	echo "![graph](./output_graph.png)" >> README.md
 
-
-all: install lint run test format
+all: install lint test format
